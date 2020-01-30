@@ -26,8 +26,7 @@ Such a system would include a means to capture, catalogue and analyze data, alon
 
 This SOW summarizes the Software development of 3 Phase Controller system which can be directly managed via end user application, these `on-premise` Hardware devices running 3 Phase Controller Software(aka edge device firmware) which would include (at least) the following:
 * WIFI Provisioning with reconnect routine.
-* Voltage monitoring to trigger the relay when Voltage goes min-max threshold values.
-* Current monitoring to trigger the relay when Current goes min-max threshold values
+* Autonomous monitoring of Voltage & Current to trigger the relay when Voltage/Current goes min-max threshold values.
 * Local Potential Free as Input to triggers the relay.
 
 
@@ -40,7 +39,6 @@ Akriya Technologies will work with 3 Phase Controller to:
 
 Akriya Technologies proposes to design, develop and provide installation of v1.0 of the proposed system to cater for 1 `on-premise` device.
 This activity will require 4-6 weeks. The estimated cost for this activity would be 1.50 lakhs INR plus additional charges including travel, server rental and hardware costs (if any).
-
 
 
 The Value Proposition of using Akriya Technologies for this project are:
@@ -57,20 +55,17 @@ These modules are abstracted based on functional and operating hardware (cloud f
 This module is the Hardware device function running to ensure isDeviceConnected to wifi provided via the Mobile App using BLE.
 The module regularly check the Wifi connectivity and reconnects if not connected. This module needs to be triggered via app or manually by pressing a button for 5 second.
 
-### 1.2 Voltage Monitoring H/W
-This module is responsible for providing current voltage on three phases.
+### 1.2 Autonomous Monitoring H/W
+This module is responsible for collecting and storing current and voltage on three phases.
 
-### 1.3 Current Monitoring H/W
-This module is responsible for collecting and storing live current from the phase wires.
-
-### 1.4 Real-time Switching H/W
+### 1.3 Real-time User Switching H/W
 The module is responsible for taking Real-time decisions of which relay to trigger, based on threshold values of Current & Voltage set by default.
 
 This would include:
 * Implementations and deployment of Communication channel for devices (MQTT).
 * User account management ( Firebase ).
 
-### 1.5 Mobile Application S/W
+### 1.4 Mobile Application S/W
 This module is a running on end-user machines which includes
 * Start the Device in Online mode or Offline mode.
 * In Offline mode, User device should be on same network for monitoring and controlling devices.
@@ -134,9 +129,9 @@ Access top-level Git repositories for the SDK, on-premise firmware, and mobile a
 
 | Milestone                                 | Percentage    | Amount    | Time period from Start
 | -------------                             |:-------------:| -----:    | ----- | 
-| Requirement Finalization + SOW acceptance                 | 25%            | 37,500 INR| 0 day | 
-| Module 1.1 - 1.3          | 25%           | 37,500 INR| 15 days |  
-| Modele 1.4 - 1.5                 | 50%          | 75,000 INR| 28 days |
+| Requirement Finalization + SOW acceptance                 | 50%            | 75,000 INR| 0 day | 
+| Module 1.1 - 1.2          | 25%           | 37,500 INR| 15 days |  
+| Modele 1.3 - 1.4                 | 25%          | 37,500 INR| 28 days |
 
 
 Devices cost to be paid on the day of installation.
